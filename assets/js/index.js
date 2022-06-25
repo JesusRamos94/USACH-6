@@ -9,9 +9,10 @@ const getPokeName = async () => {
         for (let i of data.results) {
             const response = await fetch(i.url)
             const data = await response.json()
+            
 
             pokemonsList.innerHTML += `<div class= "card">
-             <img src="${data.sprites.front_default} ">
+             <img src="${data.sprites.other.home.front_default} ">
             <p>${data.name.toUpperCase()}</p>
             </div>`
         }
